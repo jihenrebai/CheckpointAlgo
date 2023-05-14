@@ -1,29 +1,14 @@
-let tab1 =[3, 1, 7,0, 9]
-   let tab2 =[2, 4, 9, 3]
-   let sum=0;
-   let Nmdist =""
-   for(let i=0; i<tab1.length;i++){
-    let posind =tab2.indexOf(tab1[i])
-    if(posind<0){
-      sum+=tab1[i]
-    
-    
-    Nmdist +=tab1[i].toString()+","
-      
+
+  let tab = [5, 8, 11, 6, 1, 9, 3];
+  console.log(`tableau avant le tri tab ${tab}`);
+  for (let i = 1; i < tab.length; i++) {
+    let j = i - 1
+    let tmp = tab[i]
+    while (j >= 0 && tab[j] > tmp) {
+      tab[j + 1] = tab[j]
+      j--
     }
-    
+    tab[j+1] = tmp
   }
-  for(let j=0; j<tab2.length;j++){
-    let posind =tab1.indexOf(tab2[j])
-    if(posind<0){
-      sum+=tab2[j]
-    
-    
-    Nmdist +=tab2[j].toString()+","
-      
-    }
-    
-  }
-  console.log(` la somme : ${sum}`)
-  //Nmdist = Nmdist.slice(0, -1);
-  console.log(` les nombres qui ne sont pas identiques : ${Nmdist.slice(0, -1)}`)
+ 
+  console.log(`tableau aprés le tri  ${tab}`);
